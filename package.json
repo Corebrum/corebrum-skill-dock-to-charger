@@ -1,0 +1,71 @@
+{
+  "name": "@agenticros/dock-to-charger",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "External ROS-node skill: OpenNav DockRobot action for charger docking.",
+  "keywords": ["agenticros", "docking", "navigation", "opennav", "ros2"],
+  "homepage": "https://github.com/agenticros/agenticros-skill-dock-to-charger#readme",
+  "bugs": {
+    "url": "https://github.com/agenticros/agenticros-skill-dock-to-charger/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agenticros/agenticros-skill-dock-to-charger.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "agenticros": {
+    "id": "dock-to-charger",
+    "displayName": "Dock To Charger",
+    "description": "Dock the robot to a charger via OpenNav DockRobot. Bring up opennav_docking yourself; AgenticROS dispatches the action.",
+    "categories": ["navigation"],
+    "capabilities": [
+      {
+        "id": "dock_to_charger",
+        "verb": "dock",
+        "description": "Dock the mobile base to a configured charger / dock pose.",
+        "inputs": {
+          "dock_id": {
+            "type": "string",
+            "description": "Dock identifier from your docking server config.",
+            "optional": true
+          },
+          "goal": {
+            "type": "object",
+            "description": "Explicit DockRobot goal (overrides dock_id helper).",
+            "optional": true
+          }
+        },
+        "outputs": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the action reported success."
+          }
+        },
+        "interruptible": true,
+        "blocks_base": true,
+        "implementation": {
+          "kind": "external_ros_node",
+          "package": "opennav_docking",
+          "launch": "docking_server.launch.py",
+          "action": "dock_robot",
+          "msg_type": "opennav_docking_msgs/action/DockRobot"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "typescript": "^5.7.0"
+  },
+  "author": "AgenticROS",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}
