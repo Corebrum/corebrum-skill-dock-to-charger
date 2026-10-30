@@ -1,13 +1,16 @@
 # Dock To Charger — OpenNav docking skill
 
+This project was previously known as AgenticROS.
+
+
 Marketplace package for the `dock_to_charger` capability (`external_ros_node` → OpenNav `DockRobot`).
 
 ```bash
-npx agenticros skills install @agenticros/dock-to-charger
+npx @corebrum/synapse skills install @corebrum/dock-to-charger
 # or: chrismatthieu/dock-to-charger
 ```
 
-AgenticROS does **not** launch the docking server. Bring up [OpenNav docking](https://github.com/open-navigation/opennav_docking) (or a compatible `DockRobot` action server) on the robot, then install this skill.
+Corebrum Synapse does **not** launch the docking server. Bring up [OpenNav docking](https://github.com/open-navigation/opennav_docking) (or a compatible `DockRobot` action server) on the robot, then install this skill.
 
 ## Mission example
 

@@ -1,16 +1,16 @@
 {
-  "name": "@agenticros/dock-to-charger",
+  "name": "@corebrum/dock-to-charger",
   "version": "0.1.0",
   "type": "module",
   "description": "External ROS-node skill: OpenNav DockRobot action for charger docking.",
-  "keywords": ["agenticros", "docking", "navigation", "opennav", "ros2"],
-  "homepage": "https://github.com/agenticros/agenticros-skill-dock-to-charger#readme",
+  "keywords": ["synapse", "docking", "navigation", "opennav", "ros2"],
+  "homepage": "https://github.com/Corebrum/corebrum-skill-dock-to-charger#readme",
   "bugs": {
-    "url": "https://github.com/agenticros/agenticros-skill-dock-to-charger/issues"
+    "url": "https://github.com/Corebrum/corebrum-skill-dock-to-charger/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agenticros/agenticros-skill-dock-to-charger.git"
+    "url": "git+https://github.com/Corebrum/corebrum-skill-dock-to-charger.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,10 +19,10 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },
-  "agenticros": {
+  "synapse": {
     "id": "dock-to-charger",
     "displayName": "Dock To Charger",
-    "description": "Dock the robot to a charger via OpenNav DockRobot. Bring up opennav_docking yourself; AgenticROS dispatches the action.",
+    "description": "Dock the robot to a charger via OpenNav DockRobot. Bring up opennav_docking yourself; Corebrum Synapse dispatches the action.",
     "categories": ["navigation"],
     "capabilities": [
       {
@@ -63,7 +63,7 @@
     "@types/node": "^20.17.0",
     "typescript": "^5.7.0"
   },
-  "author": "AgenticROS",
+  "author": "Corebrum Synapse",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
